@@ -1,0 +1,40 @@
+{
+  "entities": {
+    "CommunityPost": {
+      "title": "CommunityPost",
+      "description": "A post by a community member.",
+      "type": "object",
+      "properties": {
+        "author": { "type": "string", "maxLength": 100 },
+        "authorId": { "type": "string", "maxLength": 128 },
+        "title": { "type": "string", "maxLength": 200 },
+        "content": { "type": "string", "maxLength": 2000 },
+        "type": { "type": "string", "enum": ["قصة نجاح", "فكرة مبتكرة"] },
+        "upvotes": { "type": "number" },
+        "createdAt": { "type": "number" },
+        "updatedAt": { "type": "number" }
+      },
+      "required": ["author", "authorId", "title", "content", "type", "upvotes", "createdAt", "updatedAt"]
+    },
+    "Vote": {
+      "title": "Vote",
+      "description": "A user's vote on a post.",
+      "type": "object",
+      "properties": {
+        "userId": { "type": "string", "maxLength": 128 },
+        "value": { "type": "number", "enum": [1, -1] }
+      },
+      "required": ["userId", "value"]
+    }
+  },
+  "firestore": {
+    "/posts/{postId}": {
+      "schema": { "$ref": "#/entities/CommunityPost" },
+      "description": "Community posts"
+    },
+    "/posts/{postId}/votes/{voteId}": {
+      "schema": { "$ref": "#/entities/Vote" },
+      "description": "Votes by users on a post, voteId should be userId"
+    }
+  }
+}

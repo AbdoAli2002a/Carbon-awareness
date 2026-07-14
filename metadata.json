@@ -1,0 +1,8 @@
+{
+  "name": "مستدام | استدامة ووعي كربوني",
+  "description": "منصة تفاعلية لتعزيز الوعي الكربوني والتنمية المستدامة، توفر حاسبة للبصمة الكربونية ومحاكاة للقرارات البيئية.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

@@ -1,0 +1,78 @@
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800&display=swap');
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+@theme {
+  --font-sans: "Cairo", ui-sans-serif, system-ui, sans-serif;
+  
+  --color-primary-50: #f0fdf4;
+  --color-primary-100: #dcfce7;
+  --color-primary-200: #bbf7d0;
+  --color-primary-300: #86efac;
+  --color-primary-400: #4ade80;
+  --color-primary-500: #22c55e;
+  --color-primary-600: #16a34a;
+  --color-primary-700: #15803d;
+  --color-primary-800: #166534;
+  --color-primary-900: #14532d;
+  
+  --color-accent-50: #eff6ff;
+  --color-accent-100: #dbeafe;
+  --color-accent-500: #3b82f6;
+  --color-accent-600: #2563eb;
+  --color-accent-700: #1d4ed8;
+}
+
+html {
+  direction: rtl;
+}
+
+html.high-contrast {
+  filter: contrast(1.5);
+  background-color: #0f172a; /* Force dark background */
+}
+
+html.high-contrast body {
+  background-color: #0f172a;
+  color: #f8fafc;
+}
+
+html.text-size-large {
+  font-size: 110%;
+}
+html.text-size-xlarge {
+  font-size: 125%;
+}
+
+/* إيقاف الحركات بالكامل عند تفعيل Reduce Motion */
+html.reduce-motion * {
+  animation-duration: 0.001ms !important;
+  animation-iteration-count: 1 !important;
+  transition-duration: 0.001ms !important;
+  scroll-behavior: auto !important;
+}
+
+/* خط القراءة الميسرة */
+html.dyslexia-font,
+html.dyslexia-font * {
+  font-family: "OpenDyslexic", "Comic Sans MS", "Tahoma", "Arial", sans-serif !important;
+  letter-spacing: 0.05em !important;
+  word-spacing: 0.1em !important;
+  line-height: 1.6 !important;
+}
+
+/* الوضع المظلم */
+html.dark-mode {
+  filter: invert(1) hue-rotate(180deg);
+  background-color: #0f172a;
+}
+html.dark-mode img,
+html.dark-mode video,
+html.dark-mode iframe {
+  filter: invert(1) hue-rotate(180deg);
+}
+
+body {
+  background-color: #f8fafc;
+  color: #0f172a;
+}
